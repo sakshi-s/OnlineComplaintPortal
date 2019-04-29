@@ -1,0 +1,2 @@
+pip install django_microsoft_auth
+pip install requests

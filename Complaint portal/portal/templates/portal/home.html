@@ -1,0 +1,58 @@
+{% extends "portal/base.html" %}
+{% load static %}
+
+
+{% block content %}
+{% for post in complaint %}
+
+<div class="container">
+    <div class="bg-warning p-2">
+       
+        <div class="media">
+                <div class="media-body">
+                    <div class="bg">
+                            <h5 class="text-success">{{ post.title }}</h5>
+                            <p>
+                                  {{ post.author }}
+                            </p>
+                            <p>
+                                  {{ post.content }}
+                            </p>
+                            <p>
+                                   
+                            </p>
+
+                    </div>
+                  
+                </div>
+              </div>   
+            </div> 
+            <div  class = "p-1" style="background:red">
+            <p>
+                    {%for comment in comments%}
+                    {% if comment.comp_id == post.id %}
+                        {{comment.comment}} <br>
+                    {%endif%}
+                    {% endfor %}
+
+                
+                
+                   
+                    
+
+            </p>
+            </div>
+    
+    
+    
+    
+        
+</div>
+<br>
+
+{%endfor%}
+
+    
+
+{% endblock content %}
+    
